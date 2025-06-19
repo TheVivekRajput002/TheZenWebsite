@@ -166,3 +166,7 @@
                 transform: scaleX(1);
             }
         }
+
+        #image{
+            box-shadow: 0px 2px 40px 5px rgba(32, 32, 32, 0.822);
+        }
