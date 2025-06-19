@@ -60,19 +60,17 @@ function pickComputerMove() {
 
 // changing background
 
-const CBB = document.getElementById("ChangeBgBtn");
+const AB = document.getElementById("audioBtn");
 var audio = new Audio('TideHerCity.mp3');
 
-CBB.src = "images/nightsky.png";
+AB.src = "images/soundoff.png";
 
-CBB.addEventListener("click", () => {
-    if (CBB.src.includes("nightsky.png")) {
-        CBB.src = "images/darkmode.png";
-        document.getElementById("video").src = "https://hdvidc-deploy.netlify.app/hdvidC.webm";
+AB.addEventListener("click", () => {
+    if (AB.src.includes("images/soundoff.png")) {
+        AB.src = "images/soundon.png";
         audio.play();
     } else {
-        CBB.src = "images/nightsky.png";
-        document.getElementById("video").src = "";
+        AB.src = "images/soundoff.png";
         audio.pause();
     }
 });
