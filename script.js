@@ -32,7 +32,7 @@ function tweet() {
 const popupBtn = document.getElementById('popupBtn')
 const closePopupBtn = document.getElementById('closePopupBtn')
 const popupContainer = document.getElementById("popupContainer")
-const divimg = document.getElementById("divimg")
+const divimg = document.getElementById("image")
 const getbtn = document.getElementById("getbtn")
 
 
