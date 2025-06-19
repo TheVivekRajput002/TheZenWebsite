@@ -1,0 +1,78 @@
+
+
+// quote generator
+
+const quote = document.getElementById("quote");
+const author = document.getElementById("author");
+const api_url = "https://dummyjson.com/quotes/random";
+
+async function getQuote(url) {
+    const response = await fetch(url);
+    var data = await response.json();
+    console.log(data);
+    quote.classList.add("animation")
+    setTimeout(() => {
+        quote.classList.remove("animation")
+    }, 400)
+    setTimeout(() => {
+        quote.innerHTML = data.quote;
+        author.innerHTML = data.author;
+    }, 200)
+
+}
+
+// tweet
+
+function tweet() {
+    window.open("https://twitter.com/intent/tweet?text=" + quote.innerHTML + " - " + author.innerHTML, "Tweet Window", "width=600,height=400");
+}
+
+// buttons
+
+const popupBtn = document.getElementById('popupBtn')
+const closePopupBtn = document.getElementById('closePopupBtn')
+const popupContainer = document.getElementById("popupContainer")
+const divimg = document.getElementById("divimg")
+const getbtn = document.getElementById("getbtn")
+
+
+popupBtn.addEventListener('click', () => {
+    popupContainer.classList.add('active');
+    divimg.classList.add('gayab');
+    getbtn.classList.add('gayab');
+    popupBtn.classList.add('gayab')
+})
+closePopupBtn.addEventListener('click', () => {
+    popupContainer.classList.remove('active');
+    divimg.classList.remove('gayab');
+    getbtn.classList.remove('gayab');
+    popupBtn.classList.remove('gayab');
+})
+
+// Image generator 
+
+var i = 0;
+
+function pickComputerMove() {
+    let x = Math.floor(Math.random() * 20) + 1;
+    document.body.querySelector("#image").src = "images/" + x + ".jpg";
+}
+
+// changing background
+
+const CBB = document.getElementById("ChangeBgBtn");
+var audio = new Audio('TideHerCity.mp3');
+
+CBB.src = "images/nightsky.png";
+
+CBB.addEventListener("click", () => {
+    if (CBB.src.includes("nightsky.png")) {
+        CBB.src = "images/darkmode.png";
+        document.getElementById("video").src = "https://hdvidc-deploy.netlify.app/hdvidC.webm";
+        audio.play();
+    } else {
+        CBB.src = "images/nightsky.png";
+        document.getElementById("video").src = "";
+        audio.pause();
+    }
+});
