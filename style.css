@@ -1,172 +1,121 @@
-
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Text:ital@0;1&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Text:ital@0;1&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 
-        * {
-            box-sizing: border-box;
-            font-family: playfair display, sans-serif;
-        }
+* {
+    box-sizing: border-box;
+    font-family: playfair display, sans-serif;
+}
 
-        .quote-box {
-            transform: translate(-50%, -50%);
-            box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
-        }
+.quote-box {
+    transform: translate(-50%, -50%);
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
+}
 
-        .quote-box h2::after {
-            content: '';
-            width: 75px;
-            height: 3px;
-            border-radius: 3px;
-            background: rgb(23, 124, 229);
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+.quote-box h2::after {
+    content: '';
+    width: 75px;
+    height: 3px;
+    border-radius: 3px;
+    background: rgb(23, 124, 229);
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-        .quote-box blockquote::before,
-        blockquote::after {
-            content: '"';
-        }
+.quote-box blockquote::before,
+blockquote::after {
+    content: '"';
+}
 
-        .quote-box span::before {
-            content: '';
-            width: 20px;
-            height: 2px;
-            background: rgb(23, 124, 229);
-            position: absolute;
-            top: 50%;
-            left: -30px;
+.quote-box span::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: rgb(23, 124, 229);
+    position: absolute;
+    top: 50%;
+    left: -30px;
 
-        }
+}
 
-        .quote-box button {
-            color: #fff;
-            border-radius: 25px;
-            width: 100px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 5px;
-            cursor: pointer;
-            font-size: 12px;
-        }
+.quote-box button {
+    color: #fff;
+    border-radius: 25px;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
 
-        #popupContainer {
-            pointer-events: none;
-            transition: bottom 0.8s;
-        }
+#popupContainer {
+    pointer-events: none;
+    transition: bottom 0.8s;
+}
 
-        #XBtn {
-            background-position: 17px 13.5px;
+#popupContainer.active {
+    bottom: -25%;
+    pointer-events: auto;
+}
 
-        }
+#getbtn {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: transform 0.1s ease-in-out;
+}
 
-        #popupContainer.active {
-            bottom: -25%;
-            pointer-events: auto;
-        }
+h3 {
+    font-family: poppins, sans-serif;
+}
 
-        #getbtn {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            border-radius: 60px;
-            background-color: rgb(225, 32, 32);
-            border: none;
-            transition: transform 0.1s ease-in-out;
-        }
+#popupBtn {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: transform 0.1s ease-in-out;
+}
 
-        #getbtn:hover {
-            transform: scale(1.1);
-        }
+.gayab {
+    display: none;
+}
 
-        h3 {
+/* Below animation is for quotes */
+.animation {
+    animation: animation;
+    animation-duration: 400ms;
+    animation-timing-function: ease;
+}
 
-            font-family: poppins, sans-serif;
+@keyframes animation {
+    to {
+        opacity: 0;
 
-        }
+    }
 
-        #popupBtn {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            background-color: #208AE1;
-            border: none;
-            transition: transform 0.1s ease-in-out;
-        }
-
-        #popupBtn:hover {
-            transform: scale(1.1);
-        }
-
-        .gayab {
-            display: none;
-        }
-
-        @media (max-width: 700px) {
-            #image {
-                /* height: 50vh; */
-                width: 70vw;
-            }
-
-            h1 {
-                font-size: 190%;
-                margin-top: 45px;
-                background-color: rgb(0, 89, 255);
-                padding: 10px 20px;
-            }
-        }
+    from {
+        opacity: 1;
+    }
 
 
-        @keyframes image {
-            from {
-                height: 0vh;
-                width: 0vw;
-            }
+}
 
-            to {
-                height: 60vh;
-                width: 40vw;
-            }
-        }
+/* below animation is for image  */
 
-        .animation {
-            animation: animation;
-            animation-duration: 400ms;
-            animation-timing-function: ease;
-        }
+#image {
+    transform-origin: center;
+    transform: scaleX(0);
+    animation: Iwidth 1s ease-in-out forwards;
+}
 
-        @keyframes animation {
-            to {
-                opacity: 0;
+@keyframes Iwidth {
+    to {
+        transform: scaleX(1);
+    }
+}
 
-            }
-
-            from {
-                opacity: 1;
-            }
-
-
-        }
-
-        #closePopupButton {
-            background-color: red;
-        }
-
-        #divimg {
-            transform-origin: center;
-            transform: scaleX(0);
-            animation: Iwidth 1s ease-in-out forwards;
-        }
-
-        @keyframes Iwidth {
-            to {
-                transform: scaleX(1);
-            }
-        }
-
-        #image{
-            box-shadow: 0px 2px 40px 5px rgba(32, 32, 32, 0.822);
-        }
+#image {
+    box-shadow: 0px 2px 40px 5px rgba(32, 32, 32, 0.822);
+}
