@@ -31,8 +31,9 @@
     <link rel="preload" as="video" href="https://hdvidc-deploy.netlify.app/hdvidC.webm" type="video/webm">
 
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 
 </head>
 
@@ -44,43 +45,45 @@
         loop playsinline></video>
     <audio src="TideHerCity.mp3" loop hidden></audio>
 
-     <img id="audioBtn" class="w-[30px] opacity-85 absolute top-[2vh] right-[2vw] cursor-pointer"
+    <img id="audioBtn" class="w-[30px] opacity-85 absolute top-[2vh] right-[2vw] cursor-pointer"
         src="" alt="">
 
     <!-- Image generator  -->
 
-    <div class="flex flex-col w-[100vw] items-center h-[90vh] md:justify-around max-md:gap-[10vh]">
-        <h3 class="text-white bg-[#0059FF] text-[150%] py-[10px] px-[20px] max-md:mt-[8vh] ">Get Meaningful Advice</h3>
-        <img id="image" class="max-md:w-[90%] rounded-4xl object-contain md:h-[60vh]" src="images/0.jpg" alt="img">
-        <div class="btns flex md:gap-[10vw] max-md:gap-[15vw]">
-            <button id="popupBtn" class="text-[18px] rounded-4xl w-[80px] h-[42px] text-white">Show</button>
-            <button id="getbtn" class="font-sans rounded-4xl w-[80px] h-[42px]  text-[18px] text-white"
+    <div class="flex flex-col w-[100vw] items-center h-[90vh] sm:justify-around max-sm:gap-[10vh]">
+        <h3 class="text-white bg-[#0059FF] text-[150%] py-[10px] px-[20px] max-sm:mt-[8vh] ">Get Meaningful Advice</h3>
+        <img id="image" class="max-sm:w-[80%] rounded-4xl object-contain sm:h-[60vh]" src="images/0.jpg" alt="img">
+        <div class="btns flex sm:gap-[10vw] max-sm:gap-[15vw]">
+            <button id="popupBtn" class="bg-[#208AE1] border-none text-[18px] rounded-4xl w-[80px] h-[42px] text-white hover:scale-110">Show</button>
+            <button id="getbtn" class="bg-[#E12020] border-none font-sans rounded-4xl w-[80px] h-[42px]  text-[18px] text-white hover:scale-110"
                 onclick="pickComputerMove()">Get</button>
         </div>
     </div>
 
-<!-- quote generator  -->
+    <!-- quote generator  -->
 
 
     <div id="popupContainer" class="w-[100%] h-[100%] fixed bottom-[-100%] left-0 ">
         <div
-            class="quote-box max-md:w-[90vw] w-[60vw] bg-white absolute left-[50%] md:py-[60px] md:px-[50px] max-md:p-[25px] max-md:py-[30px] rounded-4xl top-[40%]">
-            <h2 class="md:text-3xl max-md:text-2xl text-center mb-[40px] mt-[-15px] relative">Quote of the Day</h2>
-            <blockquote id="quote" class="md:text-2xl max-md:text-md min-h-[110px] max-md:mb-[20px]">All the powers in the universe are
+            class="quote-box max-sm:w-[90vw] w-[60vw] bg-white absolute left-[50%] sm:py-[60px] sm:px-[50px] max-sm:p-[25px] max-sm:py-[30px] rounded-4xl top-[40%]">
+            <h2 class="sm:text-3xl max-sm:text-2xl text-center mb-[40px] mt-[-15px] relative">Quote of the Day</h2>
+            <blockquote id="quote" class="sm:text-2xl max-sm:text-sm min-h-[110px] max-sm:mb-[20px]">All the powers in
+                the universe are
                 already ours. It is
                 we who have put our hands
                 before our eyes and cry that it is dark.</blockquote>
-            <span id="author" class="max-md:text-xs block mt-[5px] float-right relative top-[-30px]">Swami
+            <span id="author" class="max-sm:text-xs block mt-[5px] float-right relative top-[-30px]">Swami
                 Vivekanand</span>
             <div class=" w-[100%] flex justify-around">
                 <button id="XBtn" onclick="tweet()"
-                    class="bg-black border-black bg-size-[12px] bg-no-repeat pl-[10px] bg-[url('https://imgs.search.brave.com/9oOO-UZkMhwWdhQSR4UyHZ9M2zJHUYiHeRXeRzcU_l8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvZC53ZWJzaXRl/LWZpbGVzLmNvbS81/ZDY2YmRjNjVlNTFh/MGQxMTRkMTU4OTEv/NjRjZWJlMWQzMWY1/MGUxNjFlNGM4MjVh/X1gtbG9nby10cmFu/c3BhcmVudC13aGl0/ZS10d2l0dGVyLnBu/Zw')]">Tweet</button>
+                    class="bg-[17px_13.5px] bg-black border-black bg-size-[12px] bg-no-repeat pl-[10px] bg-[url('https://imgs.search.brave.com/9oOO-UZkMhwWdhQSR4UyHZ9M2zJHUYiHeRXeRzcU_l8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvZC53ZWJzaXRl/LWZpbGVzLmNvbS81/ZDY2YmRjNjVlNTFh/MGQxMTRkMTU4OTEv/NjRjZWJlMWQzMWY1/MGUxNjFlNGM4MjVh/X1gtbG9nby10cmFu/c3BhcmVudC13aGl0/ZS10d2l0dGVyLnBu/Zw')]">Tweet</button>
                 <button onclick="getQuote(api_url)" class="bg-[#208AE1] text-sm ">New
                     Quote</button>
-                <button id="closePopupBtn" class="bg-red-600  max-md:text-xs">Close</button>
+                <button id="closePopupBtn" class="bg-red-600  max-sm:text-xs">Close</button>
             </div>
         </div>
     </div>
+
 
     <script src="script.js"></script>
 
